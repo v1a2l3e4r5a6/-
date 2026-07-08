@@ -15,7 +15,7 @@ body {
     text-decoration: none;     
 }
 
-.conteiner {
+.container {
     max-width: 1230px;
     padding: 0 15px;
     margin: 0 auto;
@@ -24,7 +24,7 @@ body {
 
 .header {
     /* background-color: rgba(255, 255, 255, 0.05); */
-    padding: 50px 0;
+    padding: 5px 0;
     position: fixed;
     left: 0;
     right: 0;
@@ -40,12 +40,12 @@ body {
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 15px 40px;
+    padding: 8px 30px;
 }
 
 .logo img {
-    width: 50px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
 }
 
 .menu {
@@ -80,29 +80,55 @@ body {
 
 
 .header-text{
-    margin-top: -20px;
+    margin-top: 115px;
     display: flex;
     justify-content: center;
 }
 
 
 .hero {
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    min-height: 100vh;
-    background-size: cover;
-    padding-top: 147px;
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, .95) 0%,
+            rgba(0, 0, 0, .88) 22%,
+            rgba(0, 0, 0, .70) 42%,
+            rgba(0, 0, 0, .40) 58%,
+            rgba(0, 0, 0, .15) 72%,
+            rgba(0, 0, 0, 0) 85%);
+    z-index: 1;
 }
 
 .hero-inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content {
-    max-width: 630px;
-  margin-left: -29px;
+    flex: 1;
+    max-width: 480px;
+    padding-left: 30px;
+}
+
+.hero-subtitle {
+    color: #b7ff00;
+    letter-spacing: 4px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .hero-content p{
@@ -111,8 +137,15 @@ body {
 
 .hero-title {
     font-size: 64px;
-    line-height: 1.3;
-    margin-bottom: 15px;
+    line-height: 1.05;
+    font-weight: 800;
+}
+
+.hero-line {
+    width: 90px;
+    height: 4px;
+    background: #b8ff00;
+    border-radius: 20px;
 }
 
 .hero-text {
@@ -120,25 +153,114 @@ body {
     width: 521px;
 }
 
-.hero-text-paragraf{
-    font-size: 22px;
+.hero-text-paragraf {
+    font-size: 24px;
+    line-height: 1.7;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.hero-list-title {
+    color: #b7ff00;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 40px 0 20px;
 }
 
 .hero-list{
-    color: #bbff00;
-    font-size: 30px;
+    color: #b7ff00;
+    font-size: 24px;
+    margin: 25px 0;
+}
+
+.hero-list li {
+    color: white;
+    margin-bottom: 10px;
 }
 
 .hero-img {
+    flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 725px;
-    height: 553px;
-    background-size: cover;
-    background-repeat: no-repeat;
+    align-items: flex-start;
     position: relative;
-    left: 47px;
+    padding-top: 30px;
+}
+
+.hero-img img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+}
+
+.trainer-card {
+    position: relative;
+    width: 560px;
+    height: 340px;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, .45);
+    transform: rotate(-3deg);
+    transition: .4s;
+}
+
+.trainer-card:hover {
+
+    transform: rotate(0deg) scale(1.02);
+}
+
+.trainer-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+
+    right: 20px;
+
+    bottom: -18px;
+
+    height: 30px;
+
+    background: rgba(0, 0, 0, .35);
+
+    filter: blur(20px);
+
+    z-index: -1;
+}
+
+.trainer-screen {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.trainer-screen img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.trainer-photo {
+
+    position: absolute;
+
+    right: -15px;
+
+    bottom: -5px;
+
+    width: 240px;
+
+    z-index: 5;
 }
 
 
